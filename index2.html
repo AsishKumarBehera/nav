@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Navbar</title>
+    <link rel="stylesheet" href="style2.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      * {
+        margin: 0;
+        bottom: 0;
+        box-sizing: border-box;
+        font-family: cursive;
+      }
+
+      /* body {
+     background-color: #e0e7f6; 
+} */
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #e0dcdc;
+        height: 80px;
+        background-color: #e0e7f6;
+      }
+
+      .left {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .logo {
+        /* height: 100px; */
+        width: 55px;
+      }
+
+      .shown {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 100px;
+        margin-right: 70px;
+      }
+
+      .shown li {
+        list-style: none;
+      }
+
+      .shown li a {
+        text-decoration: none;
+        color: black;
+        font-size: 20px;
+        font-weight: bolder;
+        padding: 10px 20px;
+      }
+
+      .shown li a:hover {
+        background-color: rgb(137, 152, 165);
+        border-radius: 20px;
+        color: black;
+      }
+
+      .bar {
+        display: none;
+      }
+
+      .hide {
+        position: fixed;
+        top: 80px;
+        left: 30px;
+        right: 20;
+        width: 300px;
+        height: 200px;
+        background-color: rgba(0, 0, 0, 0.1);
+        border-radius: 20px;
+        box-shadow: -9px 10px 10px rgba(0, 0, 0, 0.2);
+        padding: 5px 0px 5px 0px;
+        display: none;
+        /* transition: right 0.3s ease; */
+      }
+
+      .hide li {
+        list-style: none;
+      }
+
+      .hide li a {
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: 1000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 20px;
+        color: black;
+      }
+
+      .hide li a:hover {
+        background-color: rgb(137, 152, 165);
+        border-radius: 20px;
+        color: black;
+      }
+
+      @media only screen and (max-width: 768px) {
+        .shown .mobile {
+          display: none;
+        }
+
+        .bar {
+          display: block;
+          margin-right: -60px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <div class="left">
+        <img
+          class="logo"
+          src="https://i.pinimg.com/736x/1f/e3/f6/1fe3f69e69496ad1f36ccb8d2e98409f.jpg"
+          alt=""
+        />
+        <h1>AsishKumar</h1>
+      </div>
+      <ul class="shown">
+        <li class="mobile"><a href="#">Home</a></li>
+        <li class="mobile"><a href="#">About</a></li>
+        <li class="mobile"><a href="#">Contact</a></li>
+        <li class="bar">
+          <a href="#"><i class="fa-solid fa-bars"></i></a>
+        </li>
+      </ul>
+      <ul class="hide">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li class="close">
+          <a href="#"><i class="fa-solid fa-xmark"></i></a>
+        </li>
+      </ul>
+    </nav>
+  </body>
+  <script>
+    const barEle = document.querySelector(".bar");
+    const hideEle = document.querySelector(".hide");
+    const closeBtn = document.querySelector(".close");
+    barEle.addEventListener("click", () => {
+      hideEle.style.display = "block";
+    });
+    closeBtn.addEventListener("click", () => {
+      hideEle.style.display = "none";
+    });
+  </script>
+</html>
